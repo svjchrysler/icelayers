@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>My Map Set Name (Google Maps Export from Global Mapper)</title>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+
+    var G = google.maps;
+    var map;
+    
+    var customMapType = new G.ImageMapType
+      (
+        {
+        getTileUrl: function(coord, zoom)
+          {
+          var normalizedCoord = getNormalizedCoord(coord, zoom);
+          if (!normalizedCoord) { return null; }
+          
+          if ( zoom == 3 && normalizedCoord.x >= 2 && normalizedCoord.x <= 2 && normalizedCoord.y >= 4 && normalizedCoord.y <= 4 )
+          {
+            return "file:///D://COMPARTIDA//martin//municipios//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 4 && normalizedCoord.x >= 4 && normalizedCoord.x <= 5 && normalizedCoord.y >= 8 && normalizedCoord.y <= 9 )
+          {
+            return "file:///D://COMPARTIDA//martin//municipios//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 5 && normalizedCoord.x >= 9 && normalizedCoord.x <= 10 && normalizedCoord.y >= 16 && normalizedCoord.y <= 18 )
+          {
+            return "file:///D://COMPARTIDA//martin//municipios//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 6 && normalizedCoord.x >= 19 && normalizedCoord.x <= 21 && normalizedCoord.y >= 33 && normalizedCoord.y <= 36 )
+          {
+            return "file:///D://COMPARTIDA//martin//municipios//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 7 && normalizedCoord.x >= 39 && normalizedCoord.x <= 43 && normalizedCoord.y >= 67 && normalizedCoord.y <= 72 )
+          {
+            return "file:///D://COMPARTIDA//martin//municipios//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 8 && normalizedCoord.x >= 78 && normalizedCoord.x <= 87 && normalizedCoord.y >= 134 && normalizedCoord.y <= 144 )
+          {
+            return "file:///D://COMPARTIDA//martin//municipios//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 9 && normalizedCoord.x >= 156 && normalizedCoord.x <= 174 && normalizedCoord.y >= 269 && normalizedCoord.y <= 289 )
+          {
+            return "file:///D://COMPARTIDA//martin//municipios//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 10 && normalizedCoord.x >= 313 && normalizedCoord.x <= 348 && normalizedCoord.y >= 539 && normalizedCoord.y <= 578 )
+          {
+            return "file:///D://COMPARTIDA//martin//municipios//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          return null;
+        },
+
+        alt: "My Map Set Name",
+        tileSize: new G.Size(256, 256),
+        isPng: true,
+        maxZoom: 10,
+        minZoom: 3,
+        opacity: 1.00,
+        name: "My Map Set Name"
+      }
+    )
+
+    function getNormalizedCoord(coord, zoom)
+    {
+      var y = coord.y;
+      var x = coord.x;
+      
+      var tileRange = 1 << zoom;
+      
+      if (y < 0 || y >= tileRange) { return null; }
+      if (x < 0 || x >= tileRange)
+      {
+        x = (x % tileRange + tileRange) % tileRange;
+      }
+      
+      return { x: x, y: y };
+    }
+
+    function initialize()
+    {
+      var myLatlng = new G.LatLng(-20.489949,-67.500000);
+      var myOptions = {
+        center: myLatlng,
+        zoom: 3,
+        mapTypeId: G.MapTypeId.ROADMAP,
+        mapTypeControl: true,
+        overviewMapControl: false,
+        scaleControl: false,
+        streetViewControl: true,
+        panControl: true,
+        zoomControl: true,
+        zoomControlOptions: { style: google.maps.ZoomControlStyle.DEFAULT }
+      };
+      
+      map = new G.Map(document.getElementById("map_canvas"), myOptions);
+      map.overlayMapTypes.insertAt(0, customMapType);
+    }
+    </script>
+</head>
+<body onload="initialize()">
+<div id="map_canvas" style="width: 100%; height: 800px; margin: 0px 0px 0px 0px; float: middle;"></div>
+</body> </html>
