@@ -9,10 +9,10 @@
 <source type="GMAP">
   <name>My Map Set Name</name>
   <FileExt>png</FileExt>
-  <LatLonBounds>-90,-40.9798980696,-45,0</LatLonBounds>
+  <LatLonBounds>-180,-85.0511287798,180,85.0511287798</LatLonBounds>
   <NumZoomLevels>10</NumZoomLevels>
   <TileSize>256</TileSize>
-  <BaseURL><![CDATA[file:///D:/COMPARTIDA/martin/caminos/Z%z/%y/%x.png]]></BaseURL>
+  <BaseURL><![CDATA[file:///D:/COMPARTIDA/martin/caminos/z17/Z%z/%y/%x.png]]></BaseURL>
   <NativeProj>EPSG:3857</NativeProj>
 </source>
 </source_list>

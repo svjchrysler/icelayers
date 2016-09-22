@@ -17,37 +17,49 @@
           var normalizedCoord = getNormalizedCoord(coord, zoom);
           if (!normalizedCoord) { return null; }
           
-          if ( zoom == 3 && normalizedCoord.x >= 2 && normalizedCoord.x <= 2 && normalizedCoord.y >= 4 && normalizedCoord.y <= 4 )
+          if ( zoom == 0 && normalizedCoord.x >= 0 && normalizedCoord.x <= 0 && normalizedCoord.y >= 0 && normalizedCoord.y <= 0 )
           {
-            return "file:///D://COMPARTIDA//martin//caminos//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 1 && normalizedCoord.x >= 0 && normalizedCoord.x <= 0 && normalizedCoord.y >= 1 && normalizedCoord.y <= 1 )
+          {
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 2 && normalizedCoord.x >= 1 && normalizedCoord.x <= 1 && normalizedCoord.y >= 2 && normalizedCoord.y <= 2 )
+          {
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+          }
+          else if ( zoom == 3 && normalizedCoord.x >= 2 && normalizedCoord.x <= 2 && normalizedCoord.y >= 4 && normalizedCoord.y <= 4 )
+          {
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
           }
           else if ( zoom == 4 && normalizedCoord.x >= 4 && normalizedCoord.x <= 5 && normalizedCoord.y >= 8 && normalizedCoord.y <= 9 )
           {
-            return "file:///D://COMPARTIDA//martin//caminos//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
           }
           else if ( zoom == 5 && normalizedCoord.x >= 9 && normalizedCoord.x <= 10 && normalizedCoord.y >= 16 && normalizedCoord.y <= 18 )
           {
-            return "file:///D://COMPARTIDA//martin//caminos//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
           }
           else if ( zoom == 6 && normalizedCoord.x >= 19 && normalizedCoord.x <= 21 && normalizedCoord.y >= 33 && normalizedCoord.y <= 36 )
           {
-            return "file:///D://COMPARTIDA//martin//caminos//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
           }
           else if ( zoom == 7 && normalizedCoord.x >= 39 && normalizedCoord.x <= 43 && normalizedCoord.y >= 67 && normalizedCoord.y <= 72 )
           {
-            return "file:///D://COMPARTIDA//martin//caminos//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
           }
           else if ( zoom == 8 && normalizedCoord.x >= 78 && normalizedCoord.x <= 87 && normalizedCoord.y >= 134 && normalizedCoord.y <= 144 )
           {
-            return "file:///D://COMPARTIDA//martin//caminos//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
           }
           else if ( zoom == 9 && normalizedCoord.x >= 156 && normalizedCoord.x <= 174 && normalizedCoord.y >= 269 && normalizedCoord.y <= 289 )
           {
-            return "file:///D://COMPARTIDA//martin//caminos//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
           }
           else if ( zoom == 10 && normalizedCoord.x >= 313 && normalizedCoord.x <= 348 && normalizedCoord.y >= 539 && normalizedCoord.y <= 578 )
           {
-            return "file:///D://COMPARTIDA//martin//caminos//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
+            return "file:///D://COMPARTIDA//martin//caminos//z17//Z" + zoom + "/" + normalizedCoord.y + "/" + normalizedCoord.x + ".png"; // replace that with a "real" URL
           }
           return null;
         },
@@ -56,7 +68,7 @@
         tileSize: new G.Size(256, 256),
         isPng: true,
         maxZoom: 10,
-        minZoom: 3,
+        minZoom: 0,
         opacity: 1.00,
         name: "My Map Set Name"
       }
@@ -80,10 +92,10 @@
 
     function initialize()
     {
-      var myLatlng = new G.LatLng(-20.489949,-67.500000);
+      var myLatlng = new G.LatLng(-0.000000,0.000000);
       var myOptions = {
         center: myLatlng,
-        zoom: 3,
+        zoom: 0,
         mapTypeId: G.MapTypeId.ROADMAP,
         mapTypeControl: true,
         overviewMapControl: false,
