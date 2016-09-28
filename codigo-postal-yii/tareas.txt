@@ -1,0 +1,8 @@
+
+*abm puntos
+
+*abm distribuidor
+
+*asignar pedido a distribuidor
+
+*
